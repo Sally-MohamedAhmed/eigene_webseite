@@ -1,0 +1,404 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/*.......Start Headbereich.....*/
+/*Mobile Styling*/
+#nav-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  z-index: 999;
+  background-color: white;
+}
+
+#nav-top .fas {
+  margin-top: 15px;
+  margin-left: 20px;
+  color: black;
+  font-size: 30px;
+}
+
+#nav-top .logo-wort {
+  font-size: 20px;
+  font-family: 'Dancing Script', cursive;
+  color: black;
+}
+
+#nav-top #nav-top-trigger {
+  display: none;
+}
+
+#nav-top #nav-top-trigger:checked ~ .nav-top-trigger em {
+  background-color: transparent;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#nav-top #nav-top-trigger:checked ~ .nav-top-trigger em::before {
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+#nav-top #nav-top-trigger:checked ~ .nav-top-trigger em::after {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+#nav-top #nav-top-trigger:checked ~ .menu {
+  opacity: 1;
+  pointer-events: auto;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+#nav-top .nav-top-trigger {
+  float: right;
+  height: 80px;
+}
+
+#nav-top .nav-top-trigger em {
+  display: block;
+  width: 28px;
+  height: 2px;
+  background-color: #bebebd;
+  margin: 38px 10px;
+  position: relative;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+#nav-top .nav-top-trigger em::before, #nav-top .nav-top-trigger em::after {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 2px;
+  background-color: #bebebd;
+  left: 0;
+  position: absolute;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+#nav-top .nav-top-trigger em::before {
+  -webkit-transform: translateY(8px);
+          transform: translateY(8px);
+}
+
+#nav-top .nav-top-trigger em::after {
+  -webkit-transform: translateY(-8px);
+          transform: translateY(-8px);
+}
+
+#nav-top .menu {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
+  background-color: white;
+  margin: 0;
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+#nav-top .menu > li {
+  border-bottom: 2px solid #bebebd;
+}
+
+#nav-top .menu > li:last-child {
+  border-bottom: none;
+}
+
+#nav-top .menu > li a {
+  display: block;
+  color: #380f0f;
+  text-align: center;
+  padding: 10px 0px;
+  text-decoration: none;
+}
+
+#nav-top .menu > li a:hover {
+  background-color: #f3f2ec;
+  color: #333;
+}
+
+#nav-top .menu, #nav-top .sub-menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: 2rem;
+}
+
+/* Nav Breakpoint*/
+@media only screen and (min-width: 992px) {
+  #nav-top .nav-top-trigger {
+    display: none;
+  }
+  #nav-top .menu {
+    position: static;
+    float: right;
+    display: block;
+    opacity: 1;
+    line-height: 70px;
+    background-color: transparent;
+    overflow: visible;
+    pointer-events: auto;
+  }
+  #nav-top .menu > li {
+    float: left;
+    border-bottom: none;
+    height: 60px;
+    position: relative;
+    padding-left: 10px;
+    padding-right: 15px;
+  }
+  #nav-top .menu li a {
+    padding: 0;
+  }
+  #nav-top .menu li a:hover {
+    background-color: #bdbaba;
+    color: #777676;
+  }
+  #nav-top .menu li:hover .sub-menu {
+    display: block;
+  }
+  #nav-top .sub-menu {
+    position: relative;
+    top: 100%;
+    right: 0;
+    min-width: 20px;
+    background-color: #747272;
+    display: none;
+  }
+}
+
+.kopfbereich {
+  height: 600px;
+  background-image: url(../img/georgie-cobbs-bKjHgo_Lbpo-unsplash.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+  color: #504e4e;
+  text-shadow: 0px 0px 3px #fcfcfb;
+}
+
+.heading {
+  padding-top: 255px;
+  text-align: center;
+}
+
+.unterschrift {
+  height: 50px;
+  color: #747272;
+  background-color: white;
+  border: 1px solid #747272;
+}
+
+.unterschrift:hover {
+  background-color: gold;
+}
+
+/*.......Ende Headbereich.....*/
+/*.......Start Servicebereich.....*/
+.service-text {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  float: left;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.clear::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.fas {
+  font-size: 60px;
+  display: block;
+  padding-bottom: 20px;
+}
+
+.design {
+  height: 500px;
+  width: 300px;
+  color: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+  padding-top: 50px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  cursor: pointer;
+  background-color: white;
+  border: 2px solid #d8d8d8;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.design:hover {
+  background-color: #dbd8d8;
+  -webkit-box-shadow: 5px 2px 2px gray;
+          box-shadow: 5px 2px 2px gray;
+}
+
+/*.......Ende Servicebereich.....*/
+/*------------------start Divider--------------------*/
+.divider1 {
+  height: 200px;
+  background-image: url(../img/adrien-olichon-AMatL4-XvQg-unsplash.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+  background-attachment: fixed;
+}
+
+/*------------------Ende Divider--------------------*/
+/*.......Start fußbereich.....*/
+.fußzeile {
+  padding-top: 20px;
+  background-color: white;
+  color: black;
+  font-size: 18pt;
+}
+
+.copyright {
+  float: left;
+}
+
+.social {
+  float: right;
+  margin-right: 20px;
+}
+
+.f {
+  margin-right: 0px;
+}
+
+.social a {
+  color: black;
+}
+
+/*.......Ende fußbereich.....*/
+/*---------- start Servicebereich-----------*/
+/*---------- start Anmeldeformular-----------*/
+.anmeldeform {
+  padding-top: 100px;
+  background-color: #fffbe2;
+}
+
+.anmeldung_heading {
+  font-size: 24pt;
+  text-align: center;
+}
+
+.standerdform {
+  width: 100%;
+}
+
+input[type=text]:focus textarea:focus, select:focus {
+  background-color: #fad7be;
+  border: 2px solid #c65a28;
+}
+
+.txtarea {
+  height: 150px;
+  width: 100%;
+}
+
+.checkbeschriftung {
+  float: left;
+  margin-left: 38px;
+  margin-top: -38px;
+  font-weight: lighter;
+  color: #646464;
+}
+
+.datenschutzcheck {
+  float: left;
+  height: 20px;
+  width: 20px;
+}
+
+.lebel {
+  font-weight: lighter;
+}
+
+input[type=submit] {
+  background-color: #f7c9b5;
+  color: white;
+  height: 50px;
+  width: 30px;
+  margin-bottom: 0px;
+  margin-top: 15px;
+  width: auto;
+}
+
+input[type=submit]:hover {
+  color: #c65a28;
+  background-color: white;
+}
+
+.btn {
+  text-align: center;
+}
+
+/*--------------Ende Anmeldeformular---------------*/
+/*------------Start Kontaktbereich---------*/
+.kontakt {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.kontakt_heading {
+  font-size: 24pt;
+  margin-bottom: 10px;
+}
+
+.kontakt_methoden {
+  list-style-type: none;
+}
+
+.kontakt_methoden li {
+  width: 50%;
+  float: left;
+  height: 40px;
+}
+
+.kontakt_icon {
+  display: inline-block;
+  width: 40px;
+  text-align: center;
+}
+
+.kontakt_icon .fas, .fab {
+  font-size: 130%;
+  color: gold;
+}
+
+/*------------Ende Kontaktbereich---------*/
+/*# sourceMappingURL=styles.css.map */
